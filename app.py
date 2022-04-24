@@ -3,9 +3,6 @@ import pandas as pd
 import numpy as np
 from datetime import datetime
 
-import plotly.figure_factory as ff
-import plotly.graph_objects as go
-import matplotlib.pyplot as plt
 
 import plotly.express as px
 
@@ -24,8 +21,7 @@ def run():
                         color_discrete_sequence=["fuchsia"], zoom=8)
     fig.update_layout(mapbox_style="open-street-map")
     fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
-    # fig.show()
-    # st.map(df)
+
     st.plotly_chart(fig, use_container_width=True)
 
 if __name__ == '__main__':

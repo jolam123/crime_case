@@ -1,20 +1,20 @@
 import streamlit as st
 import pandas as pd
-import numpy as np
 from datetime import datetime
 
 
 import plotly.express as px
 
+st.set_page_config(layout="wide")
 
 @st.cache
 def load_data():
     return pd.read_csv('hittakuri_revised.csv')
 
+
 def run():
     st.title("Crime in Osaka in 2018")
 
-    st.set_page_config(layout="wide")
 
     df = pd.read_csv('hittakuri_revised.csv')
     fig = px.scatter_mapbox(df, lat="latitude", lon="longitude", hover_name="town", hover_data=["crime_name", "crime_type"],
